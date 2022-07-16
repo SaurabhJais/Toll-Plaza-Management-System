@@ -1,0 +1,42 @@
+
+<%- include('upper-html.ejs') %>
+<%- include('navbar.ejs') %>
+
+
+
+<div id="modal" class="popupContainer" style="display: block; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -165px; top: 150px;">
+    <div class="popupHeader">
+        <span class="header_title text-center">Login</span>
+    </div>
+
+    <section>
+        <br>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login" >
+            <form method="post" action="login">
+                <label>Email / Username</label>
+                <input type="text" name="username"  style="width: 330px;">
+                <br>
+
+                <label>Password</label>
+                <input type="password" name="password" style="width: 330px;">
+                <br>
+
+                <div class="checkbox">
+                    <input id="remember"  type="checkbox">
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="/signup" class="btn back_btn">Sign Up</a></div>
+                    <div class="one_half last"><input  class="btn btn_red rounded-1" style="width: 147px;" type="submit" value="Login" /></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        
+    </section>
+</div>

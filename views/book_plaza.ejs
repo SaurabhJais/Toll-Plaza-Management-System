@@ -1,0 +1,191 @@
+<%- include('upper-html.ejs') %>
+    <%- include('navbar.ejs') %>
+
+
+        <!--Stylesheet-->
+        <style media="screen">
+            .background {
+                width: 430px;
+                height: 520px;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+            }
+
+            .background .shape {
+                height: 200px;
+                width: 200px;
+                position: absolute;
+
+                border-radius: 50%;
+            }
+
+            .shape:first-child {
+                background: linear-gradient(#1845ad, #23a2f6);
+                left: -80px;
+                top: 80px;
+            }
+
+            .shape:last-child {
+                background: linear-gradient(to right,
+                        #ff512f,
+                        #f09819);
+                right: -30px;
+                bottom: -80px;
+            }
+
+            form {
+                background-color: #080710 !important;
+                width: 400px;
+                background-color: rgba(255, 255, 255, 0.13);
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 80%;
+                left: 50%;
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+                padding: 50px 35px;
+            }
+
+            form * {
+                font-family: 'Poppins', sans-serif;
+                color: #ffffff;
+                letter-spacing: 0.5px;
+                outline: none;
+                border: none;
+            }
+
+            option {
+                color: rgba(8, 7, 16, 0.6);
+            }
+
+            form h3 {
+                font-size: 32px;
+                font-weight: 500;
+                line-height: 42px;
+                text-align: center;
+            }
+
+            label {
+                display: block;
+                margin-top: 30px;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            input {
+                display: block;
+                height: 50px;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.07);
+                border-radius: 3px;
+                padding: 0 10px;
+                margin-top: 8px;
+                font-size: 14px;
+                font-weight: 300;
+            }
+
+            ::placeholder {
+                color: #e5e5e5;
+            }
+
+            button {
+                margin-top: 50px;
+                width: 100%;
+                background-color: #ffffff;
+                color: #080710;
+                padding: 15px 0;
+                font-size: 18px;
+                font-weight: 600;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+        </head>
+
+        <body>
+            <br><br><br><br><br><br><br>
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <form action="/book-plaza" method="post">
+                <h3>Book Plaza</h3>
+
+                <label for="amount">State</label><br>
+                <select onchange="get_plaza(this.value)" name="state" class="form-control shadow-none">
+                    <option value="">Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                </select>
+                <label for="nonte">Plaza Name</label><br>
+                <select class="form-control shadow-none" id="plaza_name_select" name="plaza_name">
+                    <option value="">-</option>
+                </select>
+
+                <label for="nonte">Select Your Vehicle</label><br>
+                <select class="form-control shadow-none" name="vehicle_number">
+                    <% for(x of vehicles) {  %>
+                        <option value="<%= x.vehicle_number %>"><%= x.model %> (<%= x.vehicle_number %>)</option>
+                    <% } %>
+                </select>
+
+                <label for="nonte">Amount</label><br>
+                <input type="tel" id="amount" name="amount" placeholder="Amount (INR)" class="form-control shadow-none"/>
+
+                <button type="submit">Pay</button>
+
+            </form>
+            
+            <script>
+                function get_plaza(state) {
+                    
+                    let x = document.querySelectorAll("#plaza_name_select option")
+                    x.forEach((item, index) => {
+                        if(index != 0)
+                        item.remove()
+                    })
+
+                    fetch('/get_plaza_names', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ state: state }),
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            data.forEach((item) => {
+                                let x = document.createElement("option")
+                                x.value = item.plaza_name;
+                                x.innerText = item.plaza_name;
+                                document.getElementById("plaza_name_select").appendChild(x)
+                            })
+                        })
+                }
+            </script>
+        </body>
+
+        </html>

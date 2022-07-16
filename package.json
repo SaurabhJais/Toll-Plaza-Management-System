@@ -1,0 +1,26 @@
+{
+  "name": "tpms",
+  "version": "1.0.0",
+  "description": "A college project by Saurabh Jaiswal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Toll",
+    "plaza",
+    "management",
+    "system"
+  ],
+  "author": "Saurabh Jaiswal",
+  "license": "ISC",
+  "dependencies": {
+    "crypt": "0.0.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "paytmchecksum": "^1.5.0",
+    "puppeteer": "^13.0.1",
+    "qrcode": "^1.5.0"
+  }
+}

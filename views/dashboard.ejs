@@ -1,0 +1,150 @@
+<%- include('upper-html') %>
+<%- include('navbar.ejs') %>
+
+
+
+
+
+<br><Br><br><Br>
+
+<style>
+    img{
+        width: unset!important;
+        height: 50px;
+    }
+</style>
+
+<div class="row w-100 p-4">
+
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/book-plaza">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img class="logo" src="/images/toll.png">
+                <p class=" text-dark fw-bold">Book Plaza</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/show-qr">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="/images/qr-code.png">
+                <p class=" text-dark fw-bold">Qr Code</p>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/all-bookings">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/note.png">
+                <p class=" text-dark fw-bold">All Bookings</p>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/add-vehicle">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/plus.png" />
+                <p class=" text-dark fw-bold">Add Vehicle</p>
+            </div>
+        </a>
+    </div>
+
+     
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/all-vehicles">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/vehicle.png" />
+                <p class=" text-dark fw-bold">My Vehicles</p>
+            </div>
+        </a>
+    </div>
+
+    
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/add-recharge">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/recharge.png" />
+                <p class=" text-dark fw-bold">Add Recharge</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/check-balance">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/balance-sheet.png"/>
+                <p class=" text-dark fw-bold">Account Balance</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/fake-recharge">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/fake-news.png"/>
+                <p class=" text-dark fw-bold">Fake Recharge</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/transcation-history">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/history.png"/>
+                <p class=" text-dark fw-bold">Transcation History</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/all-toll-plaza">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/all-inclusive.png"/>
+                <p class=" text-dark fw-bold">All Toll Plaza</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/search-plaza">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/search.png"/>
+                <p class=" text-dark fw-bold">Search Plaza</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3 mt-3">
+        <a class="text-decoration-none" href="/Error Page">
+            <div class="d-flex flex-column justify-content-center align-items-center"
+                style="height: 100px; border-radius: 15px; border: 1px solid rgba(60,64,67,0.15); box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px rgb(60 64 67 / 15%);">
+                <img src="images/404-error.png"/>
+                <p class=" text-dark fw-bold">Error Page</p>
+            </div>
+        </a>
+    </div>
+
+
+</div>
+
+</body>
+</html>
